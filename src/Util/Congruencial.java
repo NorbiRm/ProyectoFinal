@@ -104,6 +104,9 @@ public class Congruencial {
     public void addCongruencial(int xi,int a,int m){
         congruenciales.add(new Congruencial(xi,a,m));
     }
+    public void quitarCongruencial(){
+        congruenciales.remove(congruenciales.size()-1);
+    }
 
     public ArrayList congruencialMixto(int n){
 

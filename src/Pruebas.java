@@ -114,6 +114,7 @@ public class Pruebas {
         }
         for(int i = 1; i<=datos.length; i++){
             secCo.add(firstCo.get(i-1) - datos[i-1]);
+            System.out.println(datos[i-1]);
         }
         for(int i = 0; i<datos.length; i++){
             if(i == 0){
@@ -220,7 +221,36 @@ public class Pruebas {
         }else {
             System.out.println("El valor no es adecuado");
         }
-        maxTabla = KolmogorovTable[(int)sizeArray-1][(int)alpha];
+        if(datos.length<=49)
+            maxTabla = KolmogorovTable[(int)sizeArray-1][(int)alpha];
+        else{
+            switch ((int)alpha){
+                case 0:
+                    maxTabla = 1.07/Math.sqrt(datos.length);
+                    break;
+                case 1:
+                    maxTabla = 1.22/Math.sqrt(datos.length);
+                    break;
+                case 2:
+                    maxTabla = 1.36/Math.sqrt(datos.length);
+                    break;
+                case 3:
+                    maxTabla = 1.52/Math.sqrt(datos.length);
+                    break;
+                case 4:
+                    maxTabla = 1.63/Math.sqrt(datos.length);
+                    break;
+                case 5:
+                    maxTabla = 1.73/Math.sqrt(datos.length);
+                    break;
+                case 6:
+                    maxTabla = 1.85/Math.sqrt(datos.length);
+                    break;
+                case 7:
+                    maxTabla = 1.95/Math.sqrt(datos.length);
+                    break;
+            }
+        }
 
         System.out.println("El valor generado es "+maxFinal);
         System.out.println("El valor obtenido de la tabla es "+maxTabla);

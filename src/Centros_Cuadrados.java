@@ -16,13 +16,18 @@ public class Centros_Cuadrados {
         generarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                x = Integer.parseInt(tfx.getText());
-                n = Integer.parseInt(tfn.getText());
-                cc = new CentrosCuadrados(x,n);
-                if (normalizadosCheckBox.isSelected())
-                    list1.setListData(cc.listaNormalizados.toArray());
-                else
-                    list1.setListData(cc.lista.toArray());
+                try{
+                    x = Integer.parseInt(tfx.getText());
+                    n = Integer.parseInt(tfn.getText());
+                    cc = new CentrosCuadrados(x,n);
+                    if (normalizadosCheckBox.isSelected())
+                        list1.setListData(cc.listaNormalizados.toArray());
+                    else
+                        list1.setListData(cc.lista.toArray());
+                }catch(Exception ex){
+                    JOptionPane.showMessageDialog(null,"Los Inputos no cumplen con el formato establecido");
+                }
+
 
 
 
